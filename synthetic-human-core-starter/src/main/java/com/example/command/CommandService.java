@@ -1,19 +1,22 @@
 package com.example.command;
 
 import com.example.annotation.WeylandWatchingYou;
+import com.example.metrics.CommandMetrics;
 import com.example.queue.QueueFullException;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 
-@Component
+@Service
 public class CommandService {
 
     private final ThreadPoolExecutor threadPoolExecutor;
+    private final CommandMetrics commandMetrics;
 
-    public CommandService(ThreadPoolExecutor threadPoolExecutor) {
+    public CommandService(ThreadPoolExecutor threadPoolExecutor, CommandMetrics commandMetrics) {
         this.threadPoolExecutor = threadPoolExecutor;
+        this.commandMetrics = commandMetrics;
     }
 
 
@@ -28,11 +31,12 @@ public class CommandService {
     @WeylandWatchingYou
     public void executeImmediately(Command command) {
         System.out.println("Выполняется команда: " + command.getDescription());
+        commandMetrics.recordCommand(command.getAuthor());
     }
 
     public void enqueue(Command command) {
         try {
-            threadPoolExecutor.execute(new CommandTask(command));
+            threadPoolExecutor.execute(new CommandTask(command, commandMetrics));
         } catch (RejectedExecutionException e) {
             throw new QueueFullException("Очередь переполнена, команда не принята");
         }
