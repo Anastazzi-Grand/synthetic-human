@@ -1,5 +1,6 @@
 package org.example.command;
 
+import org.example.annotation.WeylandWatchingYou;
 import org.example.queue.QueueFullException;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,7 @@ public class CommandService {
         }
     }
 
+    @WeylandWatchingYou
     public void executeImmediately(Command command) {
         System.out.println("Выполняется команда: " + command.getDescription());
     }

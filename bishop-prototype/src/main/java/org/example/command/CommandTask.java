@@ -1,5 +1,6 @@
 package org.example.command;
 
+import org.example.annotation.WeylandWatchingYou;
 import org.springframework.stereotype.Component;
 
 public class CommandTask implements Runnable {
@@ -10,6 +11,7 @@ public class CommandTask implements Runnable {
     }
 
     @Override
+    @WeylandWatchingYou
     public void run() {
         System.out.println("Выполняется задача: " + command.getDescription());
     }
