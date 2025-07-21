@@ -1,13 +1,11 @@
-package org.example.command;
+package com.example.command;
 
-import org.example.annotation.WeylandWatchingYou;
-import org.example.queue.QueueFullException;
+import com.example.annotation.WeylandWatchingYou;
+import com.example.queue.QueueFullException;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class CommandService {

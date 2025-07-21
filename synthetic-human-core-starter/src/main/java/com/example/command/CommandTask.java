@@ -1,7 +1,6 @@
-package org.example.command;
+package com.example.command;
 
-import org.example.annotation.WeylandWatchingYou;
-import org.springframework.stereotype.Component;
+import com.example.annotation.WeylandWatchingYou;
 
 public class CommandTask implements Runnable {
     private final Command command;

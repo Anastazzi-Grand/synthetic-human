@@ -1,4 +1,4 @@
-package org.example.command;
+package com.example.command;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

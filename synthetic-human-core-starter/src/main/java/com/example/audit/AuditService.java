@@ -1,6 +1,4 @@
-package org.example.audit;
-
-import org.apache.kafka.common.protocol.types.Field;
+package com.example.audit;
 
 public interface AuditService {
     void audit(String methodName, Object[] args, Object result);

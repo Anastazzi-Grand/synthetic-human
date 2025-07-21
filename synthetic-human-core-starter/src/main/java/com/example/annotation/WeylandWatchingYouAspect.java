@@ -1,10 +1,10 @@
-package org.example.annotation;
+package com.example.annotation;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.example.audit.AuditService;
+import com.example.audit.AuditService;
 import org.springframework.stereotype.Component;
 
 @Aspect

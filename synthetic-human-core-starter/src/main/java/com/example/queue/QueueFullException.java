@@ -1,4 +1,4 @@
-package org.example.queue;
+package com.example.queue;
 
 public class QueueFullException extends RuntimeException {
     public QueueFullException(String message) {
