@@ -1,4 +1,4 @@
-package com.example.queue;
+package org.example.queue;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

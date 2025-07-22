@@ -1,7 +1,7 @@
-package com.example.command;
+package org.example.command;
 
-import com.example.annotation.WeylandWatchingYou;
-import com.example.metrics.CommandMetrics;
+import org.example.annotation.WeylandWatchingYou;
+import org.example.metrics.CommandMetrics;
 
 public class CommandTask implements Runnable {
     private final Command command;

@@ -1,4 +1,4 @@
-package com.example.audit;
+package org.example.audit;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
-package com.example.command;
+package org.example.command;
 
-import com.example.annotation.WeylandWatchingYou;
-import com.example.metrics.CommandMetrics;
-import com.example.queue.QueueFullException;
+import org.example.annotation.WeylandWatchingYou;
+import org.example.metrics.CommandMetrics;
+import org.example.queue.QueueFullException;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.RejectedExecutionException;

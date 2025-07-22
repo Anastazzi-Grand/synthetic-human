@@ -1,4 +1,4 @@
-package com.example.metrics;
+package org.example.metrics;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.Gauge;
