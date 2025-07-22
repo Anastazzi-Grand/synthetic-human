@@ -23,7 +23,7 @@ public class CommandExceptionHandler {
     }
 
     @ExceptionHandler(QueueFullException.class)
-    public ResponseEntity<CommandErrorResponse> handleQueueFullException(QueueFullException ex) {
+    public ResponseEntity<CommandErrorResponse> handleQueueFull(QueueFullException ex) {
         CommandErrorResponse error = new CommandErrorResponse(
                 ex.getMessage(),
                 HttpStatus.SERVICE_UNAVAILABLE.value(),
@@ -55,4 +55,3 @@ public class CommandExceptionHandler {
         return ResponseEntity.internalServerError().body(error);
     }
 }
-

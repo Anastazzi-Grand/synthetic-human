@@ -19,21 +19,13 @@ public class CommandService {
         this.commandMetrics = commandMetrics;
     }
 
-
-    public void process(Command command) {
-        if (command.getPriority() == Priority.CRITICAL) {
-            executeImmediately(command);
-        } else {
-            enqueue(command);
-        }
-    }
-
     @WeylandWatchingYou
     public void executeImmediately(Command command) {
         System.out.println("Выполняется команда: " + command.getDescription());
         commandMetrics.recordCommand(command.getAuthor());
     }
 
+    @WeylandWatchingYou
     public void enqueue(Command command) {
         try {
             threadPoolExecutor.execute(new CommandTask(command, commandMetrics));

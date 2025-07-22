@@ -16,7 +16,12 @@ public class CommandTask implements Runnable {
     @Override
     @WeylandWatchingYou
     public void run() {
-        System.out.println("Выполняется задача: " + command.getDescription());
-        commandMetrics.recordCommand(command.getAuthor());
+        try {
+            System.out.println("Выполняется задача: " + command.getDescription());
+            Thread.sleep(5000); // Задержка 5 секунд
+            commandMetrics.recordCommand(command.getAuthor());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

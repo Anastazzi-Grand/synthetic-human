@@ -14,6 +14,7 @@ public class KafkaAuditService implements AuditService {
 
     public KafkaAuditService(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
+        System.out.println("✅ KafkaAuditService создан");
     }
 
     @Override

@@ -8,6 +8,10 @@ import java.util.Arrays;
 @Service
 @ConditionalOnProperty(name = "audit.mode", havingValue = "console", matchIfMissing = true)
 public class ConsoleAuditService implements AuditService {
+
+    public ConsoleAuditService() {
+        System.out.println("✅ ConsoleAuditService создан");
+    }
     @Override
     public void audit(String methodName, Object[] args, Object result) {
         System.out.println("Метод: " + methodName);

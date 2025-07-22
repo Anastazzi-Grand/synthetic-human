@@ -15,6 +15,7 @@ public class WeylandWatchingYouAspect {
 
     public WeylandWatchingYouAspect(AuditService auditService) {
         this.auditService = auditService;
+        System.out.println("✅ WeylandWatchingYouAspect создан! AuditService = " + auditService.getClass().getSimpleName());
     }
 
     @AfterReturning(
